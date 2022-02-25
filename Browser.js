@@ -1,7 +1,5 @@
-const menuIconURI =
-  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNjZTU3NGU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMiIgZGF0YS1uYW1lPSJDYWxxdWUgMiI+PGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjciIGhlaWdodD0iMjUiLz48ZyBpZD0iQnJvd3NlciI+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjAsMTguMjNIN2EuNzguNzgsMCwwLDEtLjc4LS43OFY3LjlBMS4xMywxLjEzLDAsMCwxLDcuMzMsNi43N0gxOS42N0ExLjEzLDEuMTMsMCwwLDEsMjAuNzksNy45djkuNTVBLjc4Ljc4LDAsMCwxLDIwLDE4LjIzWk03LjMzLDcuMjlhLjYuNiwwLDAsMC0uNi42MXY5LjU1YS4yNi4yNiwwLDAsMCwuMjYuMjZIMjBhLjI2LjI2LDAsMCwwLC4yNi0uMjZWNy45YS42LjYsMCwwLDAtLjYtLjYxWiIvPjxnIGlkPSJ0b3AiPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTcuMzMsN0gxOS42N2EuODYuODYsMCwwLDEsLjg2Ljg2VjkuNjVhMCwwLDAsMCwxLDAsMEg2LjQ3YTAsMCwwLDAsMSwwLDBWNy45QS44Ni44NiwwLDAsMSw3LjMzLDdaIi8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==";
-const blockIconURI =
-  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMiIgZGF0YS1uYW1lPSJDYWxxdWUgMiI+PGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjciIGhlaWdodD0iMjUiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xOS42Niw2LjdINy4zM0ExLjEyLDEuMTIsMCwwLDAsNi4yMSw3LjgydjkuNTVhLjc4Ljc4LDAsMCwwLC43OC43OEgyMGEuNzguNzgsMCwwLDAsLjc3LS43OFY3LjgyQTEuMTIsMS4xMiwwLDAsMCwxOS42Niw2LjdaTTIwLDE3LjYzSDdhLjI1LjI1LDAsMCwxLS4yNi0uMjZWOS41N0gyMC4yN3Y3LjhBLjI2LjI2LDAsMCwxLDIwLDE3LjYzWiIvPjwvZz48L2c+PC9zdmc+";
+const menuIconURI = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNjZTU3NGU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMiIgZGF0YS1uYW1lPSJDYWxxdWUgMiI+PGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjciIGhlaWdodD0iMjUiLz48ZyBpZD0iQnJvd3NlciI+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjAsMTguMjNIN2EuNzguNzgsMCwwLDEtLjc4LS43OFY3LjlBMS4xMywxLjEzLDAsMCwxLDcuMzMsNi43N0gxOS42N0ExLjEzLDEuMTMsMCwwLDEsMjAuNzksNy45djkuNTVBLjc4Ljc4LDAsMCwxLDIwLDE4LjIzWk03LjMzLDcuMjlhLjYuNiwwLDAsMC0uNi42MXY5LjU1YS4yNi4yNiwwLDAsMCwuMjYuMjZIMjBhLjI2LjI2LDAsMCwwLC4yNi0uMjZWNy45YS42LjYsMCwwLDAtLjYtLjYxWiIvPjxnIGlkPSJ0b3AiPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTcuMzMsN0gxOS42N2EuODYuODYsMCwwLDEsLjg2Ljg2VjkuNjVhMCwwLDAsMCwxLDAsMEg2LjQ3YTAsMCwwLDAsMSwwLDBWNy45QS44Ni44NiwwLDAsMSw3LjMzLDdaIi8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==";
+const blockIconURI = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMiIgZGF0YS1uYW1lPSJDYWxxdWUgMiI+PGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjciIGhlaWdodD0iMjUiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xOS42Niw2LjdINy4zM0ExLjEyLDEuMTIsMCwwLDAsNi4yMSw3LjgydjkuNTVhLjc4Ljc4LDAsMCwwLC43OC43OEgyMGEuNzguNzgsMCwwLDAsLjc3LS43OFY3LjgyQTEuMTIsMS4xMiwwLDAsMCwxOS42Niw2LjdaTTIwLDE3LjYzSDdhLjI1LjI1LDAsMCwxLS4yNi0uMjZWOS41N0gyMC4yN3Y3LjhBLjI2LjI2LDAsMCwxLDIwLDE3LjYzWiIvPjwvZz48L2c+PC9zdmc+";
 
 class BrowserBlocks {
   constructor() {}
@@ -9,68 +7,70 @@ class BrowserBlocks {
   getInfo() {
     // this._locale = this.setLocale();
     return {
+
       id: "browser",
       name: "Browser",
       menuIconURI: menuIconURI,
       blockIconURI: blockIconURI,
       docsURI: "https://adacraft.notion.site/9c8fb3c7ed6240e181290b2f1c70a651",
+
       blocks: [
         {
           opcode: "getUrl",
-          blockType: BlockType.REPORTER,
+          blockType: Scratch.BlockType.REPORTER,
           text: this.getMessage("get current URL"),
         },
         {
           opcode: "checkIfQueryStringFieldExists",
-          blockType: BlockType.BOOLEAN,
+          blockType: Scratch.BlockType.BOOLEAN,
           text: this.getMessage("check field existence in URL"),
           arguments: {
             FIELD: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "search",
             },
           },
         },
         {
           opcode: "getQueryStringFieldValue",
-          blockType: BlockType.REPORTER,
+          blockType: Scratch.BlockType.REPORTER,
           text: this.getMessage("get field value from URL"),
           arguments: {
             FIELD: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "search",
             },
           },
         },
         {
           opcode: "openUrl",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("open URL"),
           arguments: {
             URL: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "https://adacraft.org",
             },
           },
         },
         {
           opcode: "saveAsFile",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("save as file"),
           arguments: {
             TEXT: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "some text",
             },
             FILE_NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "file.txt",
             },
           },
         },
         {
           opcode: "openFileAsText",
-          blockType: BlockType.REPORTER,
+          blockType: Scratch.BlockType.REPORTER,
           disableMonitor: true,
           text: this.getMessage("open text file"),
         },
@@ -86,138 +86,138 @@ class BrowserBlocks {
         // },
         {
           opcode: "localStorageSetItem",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("localStorage set item"),
           arguments: {
             NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "name",
             },
             VALUE: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "value",
             },
           },
         },
         {
           opcode: "localStorageGetItem",
-          blockType: BlockType.REPORTER,
+          blockType: Scratch.BlockType.REPORTER,
           text: this.getMessage("localStorage get item"),
           arguments: {
             NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "name",
             },
           },
         },
         {
           opcode: "localStorageRemoveItem",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("localStorage remove item"),
           arguments: {
             NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "name",
             },
           },
         },
         {
           opcode: "localStorageItemExists",
-          blockType: BlockType.BOOLEAN,
+          blockType: Scratch.BlockType.BOOLEAN,
           text: this.getMessage("localStorage item exists"),
           arguments: {
             NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "name",
             },
           },
         },
         {
           opcode: "setHtml",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("set HTML"),
           arguments: {
             NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: '<h1 style="color: orange;">Hello</h1>World',
             },
           },
         },
         {
           opcode: "takePictureAndSaveWithName",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("take picture and save it to file"),
           arguments: {
             PICTURE_NAME: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "image.png",
             },
           },
         },
         {
           opcode: "takePictureAndSave",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("save webcam picture"),
         },
         {
           opcode: "windowAlert",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("window alert"),
           arguments: {
             MESSAGE: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "Some important information",
             },
           },
         },
         {
           opcode: "windowPromptReporter",
-          blockType: BlockType.REPORTER,
+          blockType: Scratch.BlockType.REPORTER,
           text: this.getMessage("window prompt as reporter"),
           arguments: {
             QUESTION: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "Please type something",
             },
             DEFAULT: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "something",
             },
           },
         },
         {
           opcode: "windowPromptNoDefaultReporter",
-          blockType: BlockType.REPORTER,
+          blockType: Scratch.BlockType.REPORTER,
           text: this.getMessage("window prompt without default as reporter"),
           arguments: {
             QUESTION: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "Please type something",
             },
           },
         },
         {
           opcode: "windowPromptCommand",
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
           text: this.getMessage("window prompt as command"),
           arguments: {
             MESSAGE: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "Please type something",
             },
             VALUE: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "something",
             },
           },
         },
         {
           opcode: "windowConfirm",
-          blockType: BlockType.BOOLEAN,
+          blockType: Scratch.BlockType.BOOLEAN,
           text: this.getMessage("window confirm"),
           arguments: {
             MESSAGE: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "Do you agree?",
             },
           },
