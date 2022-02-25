@@ -1,117 +1,14 @@
-// const ArgumentType = require('../../extension-support/argument-type');
-// const BlockType = require('../../extension-support/block-type');
-// const formatMessage = require('format-message');
-
-// const DOMPurify  = require('dompurify');
-
-// const localisation = {
-//     availableLocales: ['en', 'fr'],
-//     messages: {
-//         'get current URL': {
-//             'en': 'current URL',
-//             'fr': 'URL actuelle'
-//         },
-//         'check field existence in URL': {
-//             'en': 'field [FIELD] exists in current URL',
-//             'fr': 'le champ [FIELD] existe dans l\'URL courante'
-//         },
-//         'get field value from URL': {
-//             'en': 'field [FIELD] in current URL',
-//             'fr': 'champ [FIELD] de l\'URL courante'
-//         },
-//         'open URL': {
-//             'en': 'open [URL] URL',
-//             'fr': 'ouvrir l\'URL [URL]'
-//         },
-//         'save as file': {
-//             'en': 'save text [TEXT] as file [FILE_NAME]',
-//             'fr': 'enregistrer le texte [TEXT] dans le fichier [FILE_NAME]'
-//         },
-//         'open text file': {
-//             'en': 'ask the user to open a text file',
-//             'fr': 'demander à l\'utilisateur d\'ouvrir un fichier texte'
-//         },
-//         'open binary file': {
-//             'en': 'ask the user to open a binary file',
-//             'fr': 'demander à l\'utilisateur d\'ouvrir un fichier binaire'
-//         },
-//         'localStorage set item': {
-//             'en': 'set [NAME] to [VALUE] in local storage',
-//             'fr': 'localStorage : mettre [NAME] à [VALUE]'
-//         },
-//         'localStorage get item': {
-//             'en': 'item [NAME] in local storage',
-//             'fr': 'localStorage : [NAME]'
-//         },
-//         'localStorage remove item': {
-//             'en': 'remove [NAME] from local storage',
-//             'fr': 'localStorage : supprimer [NAME]'
-//         },
-//         'localStorage item exists': {
-//             'en': 'item [NAME] exists in local storage?',
-//             'fr': 'localStorage : l\'élément [NAME] existe?'
-//         },
-//         'set HTML': {
-//             'en': 'set HTML to [NAME]',
-//             'fr': 'mettre le HTML à [NAME]'
-//         },
-//         'take picture and save it to file': {
-//             'en': 'save webcam picture to file [PICTURE_NAME]',
-//             'fr': 'enregistrer la webcam dans le fichier [PICTURE_NAME]'
-//         },
-//         'save webcam picture': {
-//             'en': 'save webcam picture',
-//             'fr': 'enregistrer la webcam'
-//         },
-//         'window alert': {
-//             'en': 'dialog [MESSAGE]',
-//             'fr': 'dialogue [MESSAGE]'
-//         },
-//         'window prompt as reporter': {
-//             'en': 'dialog with question [QUESTION] and default [DEFAULT]',
-//             'fr': 'dialogue avec question [QUESTION] et valeur [DEFAULT]'
-//         },
-//         'window prompt without default as reporter': {
-//             'en': 'dialog with question [QUESTION]',
-//             'fr': 'dialogue avec question [QUESTION]'
-//         },
-//         'window prompt as command': {
-//             'en': 'dialog with message [MESSAGE] and value [VALUE]',
-//             'fr': 'dialogue avec message [MESSAGE] et valeur [VALUE]'
-//         },
-//         'window confirm': {
-//             'en': 'dialog with confirmation [MESSAGE]',
-//             'fr': 'dialogue avec confirmation [MESSAGE]'
-//         }
-//     }
-// };
-  
-
-
-/**
- * Icon svg to be displayed at the left edge of each extension block, encoded as a data URI.
- * @type {string}
- */
-// eslint-disable-next-line max-len
 const menuIconURI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNjZTU3NGU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMiIgZGF0YS1uYW1lPSJDYWxxdWUgMiI+PGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjciIGhlaWdodD0iMjUiLz48ZyBpZD0iQnJvd3NlciI+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjAsMTguMjNIN2EuNzguNzgsMCwwLDEtLjc4LS43OFY3LjlBMS4xMywxLjEzLDAsMCwxLDcuMzMsNi43N0gxOS42N0ExLjEzLDEuMTMsMCwwLDEsMjAuNzksNy45djkuNTVBLjc4Ljc4LDAsMCwxLDIwLDE4LjIzWk03LjMzLDcuMjlhLjYuNiwwLDAsMC0uNi42MXY5LjU1YS4yNi4yNiwwLDAsMCwuMjYuMjZIMjBhLjI2LjI2LDAsMCwwLC4yNi0uMjZWNy45YS42LjYsMCwwLDAtLjYtLjYxWiIvPjxnIGlkPSJ0b3AiPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTcuMzMsN0gxOS42N2EuODYuODYsMCwwLDEsLjg2Ljg2VjkuNjVhMCwwLDAsMCwxLDAsMEg2LjQ3YTAsMCwwLDAsMSwwLDBWNy45QS44Ni44NiwwLDAsMSw3LjMzLDdaIi8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==';
 const blockIconURI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNyAyNSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMiIgZGF0YS1uYW1lPSJDYWxxdWUgMiI+PGcgaWQ9IkxheWVyXzEiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMjciIGhlaWdodD0iMjUiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xOS42Niw2LjdINy4zM0ExLjEyLDEuMTIsMCwwLDAsNi4yMSw3LjgydjkuNTVhLjc4Ljc4LDAsMCwwLC43OC43OEgyMGEuNzguNzgsMCwwLDAsLjc3LS43OFY3LjgyQTEuMTIsMS4xMiwwLDAsMCwxOS42Niw2LjdaTTIwLDE3LjYzSDdhLjI1LjI1LDAsMCwxLS4yNi0uMjZWOS41N0gyMC4yN3Y3LjhBLjI2LjI2LDAsMCwxLDIwLDE3LjYzWiIvPjwvZz48L2c+PC9zdmc+';
 
-class Scratch3AdaBrowserBlocks {
-    constructor (runtime) {
-        /**
-         * The runtime instantiating this block package.
-         * @type {Runtime}
-         */
-        this.runtime = runtime;
-    }
+class BrowserBlocks {
 
-    /**
-     * @returns {object} metadata for this extension and its blocks.
-     */
+    constructor (runtime) {}
+
     getInfo () {
         // this._locale = this.setLocale();
         return {
-            id: 'Browser',
+            id: 'browser',
             name: 'Browser',
             menuIconURI: menuIconURI,
             blockIconURI: blockIconURI,
@@ -531,3 +428,4 @@ class Scratch3AdaBrowserBlocks {
       }
 }
 
+Scratch.extensions.register(new BrowserBlocks());
