@@ -529,4 +529,5 @@ class Scratch3AdaBrowserBlocks {
       getMessage(id) {
         return localisation.messages[id][this._locale];
       }
-    }
+}
+
