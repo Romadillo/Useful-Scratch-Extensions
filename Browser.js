@@ -3,7 +3,7 @@ const blockIconURI = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 class BrowserBlocks {
 
-    constructor (runtime) {}
+    constructor () {}
 
     getInfo () {
         // this._locale = this.setLocale();
