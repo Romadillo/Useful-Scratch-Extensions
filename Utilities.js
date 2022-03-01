@@ -223,7 +223,7 @@ class Utilities {
   }
 
   setLocalStorage({A}) {
-    localStorage.setItem('test', A)
+    window.localStorage.setItem('test', A)
   }
 
   isExactly({A, B}) {
