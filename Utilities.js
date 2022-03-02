@@ -17,15 +17,19 @@ class Utilities {
 
       blocks: [
         {
-          opcode: 'setLocalStorage',
+          opcode: 'distanceToXY',
 
-          blockType: Scratch.BlockType.COMMAND,
+          blockType: Scratch.BlockType.REPORTER,
 
-          text: 'Set Local storage to [A]',
+          text: 'Distance to [X] [Y]',
           arguments: {
-            A: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'Apple'
+            X: {
+              type: Scratch.ArgumentType.NUMBER,
+              defaultValue: '0'
+            },
+            Y: {
+              type: Scratch.ArgumentType.NUMBER,
+              defaultValue: '0'
             }
           }
         },
@@ -222,8 +226,8 @@ class Utilities {
     }
   }
 
-  setLocalStorage({A}) {
-    window.localStorage.setItem('test', A)
+  distanceToXY({X, Y}) {
+    return Math.sqrt(Math.pow(this.x - X, 2) + Math.pow(this.y - Y, 2))
   }
 
   isExactly({A, B}) {
