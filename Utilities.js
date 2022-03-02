@@ -227,7 +227,7 @@ class Utilities {
   }
 
   distanceToXY({X, Y}) {
-    return Math.sqrt(Math.pow(this.x - X, 2) + Math.pow(this.y - Y, 2))
+    return Math.sqrt(Math.pow(this.x - X, 2) + Math.pow(this.y - Y, 2));
   }
 
   isExactly({A, B}) {
