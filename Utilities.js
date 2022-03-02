@@ -17,19 +17,27 @@ class Utilities {
 
       blocks: [
         {
-          opcode: 'distanceToXY',
+          opcode: 'distanceFromXYToXY',
 
           blockType: Scratch.BlockType.REPORTER,
 
-          text: 'Distance to [X] [Y]',
+          text: 'Distance from [X1] [Y1] to [X2] [Y2]',
           arguments: {
-            X: {
+            X1: {
               type: Scratch.ArgumentType.NUMBER,
               defaultValue: '0'
             },
-            Y: {
+            Y1: {
               type: Scratch.ArgumentType.NUMBER,
               defaultValue: '0'
+            },
+            X2: {
+              type: Scratch.ArgumentType.NUMBER,
+              defaultValue: '134'
+            },
+            Y2: {
+              type: Scratch.ArgumentType.NUMBER,
+              defaultValue: '-20'
             }
           }
         },
@@ -226,8 +234,8 @@ class Utilities {
     }
   }
 
-  distanceToXY({X, Y}) {
-    return Math.sqrt(Math.pow(this.x - X, 2) + Math.pow(this.y - Y, 2));
+  distanceFromXYToXY({X1, Y1, X2, Y2}) {
+    return Math.sqrt(Math.pow(X1 - X2, 2) + Math.pow(Y1 - Y2, 2));
   }
 
   isExactly({A, B}) {
