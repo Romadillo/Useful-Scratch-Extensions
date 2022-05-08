@@ -187,6 +187,13 @@ class ScratchGamepad {
                             },
                         },                    
                     },
+                    {
+                        "opcode": "gamepadsConnected",
+                        "blockType": "Reporter",
+                        "text": "Gamepads Connected",
+                        "arguments": {
+                        },                    
+                    },
                   
             ],
             "menus": {
@@ -213,6 +220,10 @@ class ScratchGamepad {
     
     buttonDown({b,i}) {
         return this.gamepads[i-1].getButton(this.runtime.currentMSecs,b-1)
+    }
+
+    gamepadsConnected({}) {
+        return this.gamepads.length
     }
 }
 
