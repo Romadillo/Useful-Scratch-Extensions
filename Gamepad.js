@@ -189,7 +189,7 @@ class ScratchGamepad {
                     },
                     {
                         "opcode": "vibrate",
-                        "blockType": "Command",
+                        "blockType": "command",
                         "text": "Vibrate gamepad [i] for [d] ms with high magnitude [s], low magnitude [w]",
                         "arguments": {
                             "i": {
@@ -241,11 +241,12 @@ class ScratchGamepad {
 
     vibrate({i, d, s, w}) {
         this.gamepads[i-1].vibrationActuator.playEffect('dual-rumble', {
-            startDelay: 0,
+            startDelay: 10,
             duration: d,
             weakMagnitude: w,
             strongMagnitude: s,
           });
+        return True
     }
 }
 
