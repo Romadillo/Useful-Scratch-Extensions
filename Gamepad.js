@@ -101,6 +101,18 @@ class SingleGamepad {
         else
             return false
     }
+
+    vibrate(d, s, w) {
+        var gamepad = this.getGamepad(this.index)
+        if (gamepad) {
+            gamepad.vibrationActuator.playEffect('dual-rumble', {
+                startDelay: 10,
+                duration: d,
+                weakMagnitude: w,
+                strongMagnitude: s,
+            });
+        }
+    }
 }
 
 class ScratchGamepad {
@@ -240,13 +252,7 @@ class ScratchGamepad {
     }
 
     vibrate({i, d, s, w}) {
-        this.gamepads[i-1].vibrationActuator.playEffect('dual-rumble', {
-            startDelay: 10,
-            duration: d,
-            weakMagnitude: w,
-            strongMagnitude: s,
-          });
-        return True
+        this.gamepads[i-1].vibrate(d,s,w)
     }
 }
 
