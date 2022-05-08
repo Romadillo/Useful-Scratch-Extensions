@@ -188,10 +188,22 @@ class ScratchGamepad {
                         },                    
                     },
                     {
-                        "opcode": "gamepadsConnected",
-                        "blockType": "Reporter",
-                        "text": "Gamepads Connected",
+                        "opcode": "vibrate",
+                        "blockType": "command",
+                        "text": "Vibrate for [d] ms with high magnitude [s], low magnitude [w]",
                         "arguments": {
+                            "d": {
+                                "type": "number",
+                                "defaultValue": "200"
+                            },
+                            "s": {
+                                "type": "number",
+                                "defaultValue": "1",
+                            },
+                            "w": {
+                                "type": "number",
+                                "defaultValue": "1",
+                            },
                         },                    
                     },
                   
@@ -222,8 +234,13 @@ class ScratchGamepad {
         return this.gamepads[i-1].getButton(this.runtime.currentMSecs,b-1)
     }
 
-    gamepadsConnected({}) {
-        return this.gamepads.length
+    vibrate({d, s, w}) {
+        gamepad.vibrationActuator.playEffect('dual-rumble', {
+            startDelay: 0,
+            duration: d,
+            weakMagnitude: w,
+            strongMagnitude: s,
+          });
     }
 }
 
